@@ -7,6 +7,8 @@
     <title>{{ title }}</title>
 	<link rel="icon" type="image/x-icon" href="img/favicon.ico" />
     <link rel="stylesheet" href="/css/styles.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -18,13 +20,13 @@
 
 	</script>
   </head>
-  <body class="bg-white">
+  <body class="bg-white font-display">
 	<header class="header w-full flex flex-col justify-between">
 		<nav class="w-full mt-0 bg-white shadow-sm">
 		<div class="container flex flex-wrap items-center justify-between mx-auto">
 			<div id="logo" class="flex">
-				<div class="relative w-16 h-16 mt-2 mb-2">
-					<a href="/"><img class="inline rounded-full border border-gray-100 shadow-sm" src="img/profile.jpg" alt="Rob Lumley"/></a>
+				<div class="relative w-16 h-16 mt-2 mb-2 ml-2">
+					<a href="/"><img class="inline rounded-full border border-gray-100 shadow-sm" src="img/profile.jpg" height="64" width="64" alt="Rob Lumley"/></a>
 				</div>
 				<div class="block mt-6 ml-4"><a href="/" class="text-xl text-purple-900 font-bold hover:underline">Rob Lumley</a></div>
 			</div>
@@ -40,7 +42,7 @@
       {{ content | safe }}
     </main>
 	<footer class="w-full px-4 py-6 shadow-sm bg-gray-200">
-		<div class="flex flex-col items-center justify-between mx-16 my-4 ml-20 sm:flex-row"><p class="pt-6"><span class="mr-6 text-sm text-center sm:mr-0 sm:text-base">Created using Eleventy & Tailwind CSS.</span></p>
+		<div class="flex flex-col items-center justify-between mx-16 my-4 ml-20 sm:flex-row"><p><span class="mr-6 text-sm text-center sm:mr-0 sm:text-base">Created using Eleventy & Tailwind CSS.</span></p>
 		<div class="flex items-center">
 			<span class="mr-6 text-sm text-center sm:mr-0 sm:text-base">© rmlumley.com, 2021 </span></div></div>
 	<footer>
