@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="robots" content="noindex, nofollow" />
+    <title>Rob and Caroline's Wisconsin Bookstore Tour</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Fascinate&family=Lexend+Deca:wght@100..900&family=Pacifico&display=swap" rel="stylesheet">
+	<link rel="icon" type="image/x-icon" href="img/favicon-book.png">
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Lexend Deca", sans-serif;
+			font-optical-sizing: auto;
+			font-weight: <weight>;
+			font-style: normal;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+		h1 {
+			font-family: "Fascinate", system-ui;
+			font-weight: 400;
+			font-style: normal;
+		}
+		h2 {
+			font-family: "Pacifico", cursive;
+			font-weight: 400;
+			font-style: normal;
+		}
+		
+		a {
+			color: #f0615c;
+		}
+
+        section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 2rem;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+            position: relative;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        /* Intro Section */
+        #intro {
+            background: linear-gradient(135deg, #789e9e 0%, #304446 100%);
+            color: white;
+            text-align: center;
+        }
+
+        #intro h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        #intro p {
+            font-size: 1.5rem;
+            opacity: 0.9;
+        }
+		
+		#intro .intro-image {
+			margin-bottom: 1rem;
+            max-width: 600px;
+            width: 100%;
+            height: auto;
+			border-radius: 10px;
+        }
+
+
+        /* Block Sections */
+        .block {
+            background: #f8f9fa;
+        }
+
+        .block:nth-child(even) {
+            background: white;
+        }
+
+        .block-content {
+            text-align: center;
+        }
+
+        .block-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #667eea;
+        }
+
+        .block-content p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+		
+		.grid-container {
+		  display: grid;
+		  grid-template-columns: 1fr 1fr;
+		  gap: 1rem;
+		}
+		.cartoon {
+			width: 100%;
+			max-width: 800px;
+			height: auto;
+			border-radius: 10px;
+		}
+
+        /* Closing Section */
+        #closing {
+            background: linear-gradient(135deg, #eff4dd 0%, #f0615c 100%);
+            color: white;
+            text-align: center;
+        }
+
+        #closing h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        #closing p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+        }
+
+        /* Scroll Arrow */
+        .scroll-arrow {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            cursor: pointer;
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-arrow svg {
+            width: 50px;
+            height: 50px;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+
+        .scroll-arrow:hover svg {
+            opacity: 1;
+        }
+
+        #closing .scroll-arrow {
+            display: none;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+			.grid-container {
+				grid-template-columns: 1fr;
+			}
+            #intro h1 {
+                font-size: 2.5rem;
+            }
+
+            #intro p {
+                font-size: 1.2rem;
+            }
+
+            .block-content h2 {
+                font-size: 2rem;
+            }
+
+            .block-content p {
+                font-size: 1rem;
+            }
+
+            #closing h2 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section id="intro">
+        <div class="container">
+            <h1>Rob and Caroline's Wisconsin Bookstore Tour</h1>
+            <p>You + Me + Books and a weekend roadtrip across Wisconsin</p>
+			<img src="img/cartoonus.png" class="intro-image" alt="Rob and Caroline"/>
+        </div>
+        <div class="scroll-arrow" onclick="scrollToNext(this)">
+            <svg fill="white" viewBox="0 0 24 24">
+                <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+            </svg>
+        </div>
+    </section>
+
+    <section class="block" id="block1">
+        <div class="container">
+            <div class="block-content">
+                <h2>Friday</h2>
+			<div class="grid-container">
+				<div class="grid-item">
+					<h3>Stevens Point</h3>
+					<p>We drive 90 mins up to Stevens Point and go to <a href="https://sojournbooksellers.com/">Sojourn Bookstore</a> and grab lunch.</p>
+					<img src="img/sojourn.png" alt="Sojourn Bookstore"/>
+				</div>
+				<div class="grid-item">
+					<h3>Wausau</h3>
+					<p>We then drive 40 minutes up to Wausau and visit <a href="https://www.jankebookstore.com/">Janke Bookstore</a>, the oldest bookstore in Wisconsin. We get dinner and stay the night in Wausau.</p>
+					<img src="img/janke.png" alt="Janke Bookstore"/>
+				</div>
+            </div>
+			</div>
+        </div>
+        <div class="scroll-arrow" onclick="scrollToNext(this)">
+            <svg fill="#f1615c" viewBox="0 0 24 24">
+                <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+            </svg>
+        </div>
+    </section>
+	
+	<section class="block" id="block2">
+        <div class="container">
+			<div class="block-content">
+				<img src="img/cartoonus-book.png" class="cartoon" alt="Rob and Caroline reading"/>
+			</div>
+        </div>
+        <div class="scroll-arrow" onclick="scrollToNext(this)">
+            <svg fill="#f1615c" viewBox="0 0 24 24">
+                <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+            </svg>
+        </div>
+    </section>
+
+    <section class="block" id="block3">
+        <div class="container">
+            <div class="block-content">
+                <h2>Saturday</h2>
+			<div class="grid-container">
+				<div class="grid-item">
+					<h3>Rhinelander</h3>
+					<p>We drive 60 minutes up to Rhinelander and go to <a href="https://www.briarhousecoffee.com/">Briar House</a> for coffee and books.</p>
+					<img src="img/briarhouse.png" alt="Briar House"/>
+				</div>
+				<div class="grid-item">
+					<h3>Bayfield</h3>
+					<p>We take a longer 2.5 hour drive and arrive in Bayfield and visit <a href="https://spinsterbooks.com/">Honest Dog Books</a>. We stay the night on Lake Superior.</p>
+					<img src="img/honestdog.png" alt="Honest Dog Books"/>
+				</div>
+			</div>
+            </div>
+        </div>
+        <div class="scroll-arrow" onclick="scrollToNext(this)">
+            <svg fill="#f1615c" viewBox="0 0 24 24">
+                <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+            </svg>
+        </div>
+    </section>
+
+
+    <section class="block" id="block4">
+        <div class="container">
+            <div class="block-content">
+				<h2>Sunday</h2>
+                <h3>The long drive back</h3>
+				<p>We wake up early, grab some coffee and make our return drive to Madison. It's a long day but we'll have each other and a car full of books.</p>
+				<img src="img/cartoonus-car.png" class="cartoon" alt="Rob and Caroline driving"/>
+            </div>
+        </div>
+        <div class="scroll-arrow" onclick="scrollToNext(this)">
+            <svg fill="#f1615c" viewBox="0 0 24 24">
+                <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+            </svg>
+        </div>
+    </section>
+	
+	<section class="block" id="block4">
+        <div class="container">
+            <div class="block-content">
+				<h2>Our Trip</h2>
+				<iframe src="https://snazzymaps.com/embed/765587" width="100%" height="600px" style="border:none;"></iframe>
+            </div>
+        </div>
+        <div class="scroll-arrow" onclick="scrollToNext(this)">
+            <svg fill="#f1615c" viewBox="0 0 24 24">
+                <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+            </svg>
+        </div>
+    </section>
+
+    <section id="closing">
+        <div class="container">
+            <h2>Do you want to go?</h2>
+            <p>If you do, pick a weekend that we can spend together. I'll handle everything else. This is my birthday gift to you.</p>
+        </div>
+    </section>
+
+    <script>
+        // Intersection Observer for scroll animations
+        const sections = document.querySelectorAll('section');
+        
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Make first section visible immediately
+        document.getElementById('intro').classList.add('visible');
+
+        // Scroll to next section
+        function scrollToNext(arrow) {
+            const currentSection = arrow.closest('section');
+            const nextSection = currentSection.nextElementSibling;
+            if (nextSection) {
+                nextSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>
